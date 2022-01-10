@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>regestration form</title>
+    <h1>regestration form</h1>
+
+
+
+<form action="/process" method="post">
+    <div>
+        <label>First Name*: </label>
+        <input type="text" name="first name" >
+    </div>
+    <div>
+        <label>Last name *: </label>
+        <input type="text" name="last name">
+    </div>
+    <div>
+        <label> email *:</label>
+        <input type="text" name="email">
+    </div>
+    <div>
+        <label> Password *:</label>
+        <input type="password" name="password">
+    </div>
+    <div> 
+        <label> confirm password *:</label>
+        <input type="password" name="confirm password">
+    </div>
+    <div> 
+        <label> birthday *:</label>
+        <input type="date" name="dob">
+    </div>
+    <div> 
+        <label> gender identity *:</label>
+    </div>
+    <div> 
+        <input type="radio" name="gender" value="male" id="male">
+        <label for="male">male</label>
+        <input type="radio" name="gender" value="female" id="female">
+        <label for="female">female</label>
+        <input type="radio" name="gender" value="non-binary" id="non-binary">
+        <label for="non-binary">non-binary</label>
+        <input type="radio" name="gender" value="iprefernottoanswer" id="iprefernottoanswer">
+        <label for="iprefernottoanswer">i prefer not to answer</label>
+    </div>
+    <div>
+        <label> a short description about myself:</label>
+    </div>
+    <div>
+        <textarea name="description" cols="20" rows="3"></textarea>
+    </div>
+    <div>
+        <label> favorite language:</label>
+        <select name="language">
+            <option>java script</option>
+            <option>python</option>
+        </select>
+    </div>
+    <div>
+        <input type="checkbox" name="accept" id="accept">
+        <label> Yes, i would like to recive periodic email updates:</label>
+    </div>
+    <div>
+        <input type="submit" value="creat account">
+    </div>
+
+
+</form>
+<p> * indicates a required field </p>
+
+
+</html>
