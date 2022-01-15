@@ -44,6 +44,7 @@ margin-left: 200px;
 }
 .btn1{
     background-color: #ffd966;
+    box-shadow: 2px 2px black;
 }
 .secondbox{
 width: 230px;
@@ -77,4 +78,11 @@ h3{
 .p{
     margin-right: 40px;
     font-size: 20px;
+}
+#noun{
+    font-style: italic;
+}
+
+#noun2{
+    font-style: italic;
 }
