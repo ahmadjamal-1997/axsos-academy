@@ -1,0 +1,102 @@
+.container{
+    margin: 0 auto;
+    width: 800px;
+    height: 130px;
+}
+
+
+header{
+    display: flex;
+    width: 800px;
+    height: 60px;
+    justify-content: flex-start;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    align-items: center;
+    padding-left: 10px;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+.leftpart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    outline: 2px solid black;
+    width: 200px;
+    height: 300px;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+img{
+    width: 90px;
+    height: 90px;
+}
+a{
+    font-size: 20px;
+}
+h3{
+ font-size:  30px;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 155px;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+.rightpart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 35px;
+}
+.likesblock1{
+    display: flex;
+    justify-content: space-around;
+    width: 140px;
+    height: 80px;
+    align-items: center;
+    margin-right: 50px;
+}
+.p2{
+    font-size: 20px;
+    margin-left: 35px;
+}
+.firstbox{
+    outline: 2px solid black;
+}
+.secondbox{
+    outline: 2px solid black;
+    margin-top: 10px;
+}
+.mainbody{
+    display: flex;
+    vertical-align: top;
+    height: 800px;
+    align-items: flex-start;
+    width: 800px;
+    justify-content: space-between;
+    margin-left: 280px;
+}
+.thirdbox{
+    outline: 2px solid black;
+    margin-top: 10px;
+}
+.btn{
+        display: flex;
+        height: 25px;
+        background-color: #ffd966;
+        box-shadow: 2px 2px black;
+        padding: 10px;
+        align-items: center;
+}
+.p1{
+    font-weight: bold;
+    font-size: 25px;
+}
+
