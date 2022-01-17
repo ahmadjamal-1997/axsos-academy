@@ -39,7 +39,7 @@
                     <h3><img src="icons/map-marker.png" alt="pin" class="icon-s"> Seattle</h3>
                     <p>Developer | Engineer | Problem Solver<br>
                     Master of shadows and the Internet!</p>
-                    <p><a href="#" onclick="change()"><img src="icons/gear.png" alt="gear" class="icon-s" > edit profile</a></p>
+                    <p><a href="#" onclick="change()"><img src="icons/gear.png" alt="gear" class="icon-s"> edit profile</a></p>
                 </div>
             </div>
 
@@ -63,28 +63,28 @@
             <!-- connection requests card -->
             <div class="card">
                 <div class="card-header">
-                    <span class="badge">2</span>
+                    <span class="badge" id="num1">2</span>
                     <h3>Connection Requests</h3>
                 </div>
                 <ul class="card-list">
-                    <li class="card-list-item" id="user"> 
+                    <li class="card-list-item" id="user1">
                         <span>
                             <img src="images/todd-s.jpg" alt="todd" class="avatar-s">
                             Todd E
                         </span>
                         <span>
-                            <img src="icons/accept-circle.png" alt="accept" class="icon"onclick="remove(0)">
-                            <img src="icons/close-circle.png" alt="close" class="icon" onclick="remove(0)">
+                            <img src="icons/accept-circle.png" alt="accept" class="icon" onclick="remove(0), myfun(0)">
+                            <img  src="icons/close-circle.png" alt="close" class="icon" onclick="remove(0), myfun(1)">
                         </span>
                     </li>
-                    <li class="card-list-item" id="user1">
+                    <li class="card-list-item" id="user2">
                         <span>
                             <img src="images/phil-s.jpg" alt="phil" class="avatar-s">
                             Phil E
                         </span>
                         <span>
-                            <img src="icons/accept-circle.png" alt="accept" class="icon" onclick="remove(1)">
-                            <img src="icons/close-circle.png" alt="close" class="icon" onclick="remove(1)">
+                            <img src="icons/accept-circle.png" alt="accept" class="icon" onclick="remove(1),myfun(0)">
+                            <img src="icons/close-circle.png" alt="close" class="icon" onclick="remove(1),myfun(1)">
                         </span>
                     </li>
                 </ul>
@@ -93,7 +93,7 @@
             <!-- your connections card -->
             <div class="card">
                 <div class="card-header">
-                    <span class="badge">500+</span>
+                    <span class="badge" id="num2">500</span>
                     <h3>Your Connections</h3>
                 </div>
                 <ul class="card-list">
