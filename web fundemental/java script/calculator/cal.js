@@ -20,7 +20,6 @@ function setOP(operations){
     var b=document.querySelector("#display")
     //var d=parseInt(b.innerText)
     operation=operations
-
 }
 
 function calculate(){
