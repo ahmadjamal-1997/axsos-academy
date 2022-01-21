@@ -27,7 +27,9 @@
     display: flex;
     flex-direction: column;
     align-items:center;
-    justify-content: flex-start;}
+    justify-content: flex-start;
+    margin-top: 10px;
+}
 .btn{
     margin-left: 4px;
     width: 30px;
@@ -41,7 +43,6 @@
 }
 .white{
     color: white;
-    text-decoration: none;
 }
 .nav{
     background-color: #487ead;
@@ -64,10 +65,12 @@
     justify-content: center;
     justify-content: space-between;
     margin-top: 30px;
-    text-decoration: underline;
+
 }
 .white-{
     color: white;
+    text-decoration: underline;
+    margin-left: 10px;
 }
 .p2{
     color: #fdd32f;
@@ -77,8 +80,6 @@
     height: 1000px;
 
 }
-
-
 
 article{
     color: yellow;
@@ -133,7 +134,7 @@ article{
 }
 
 footer{
-    background-color: #295d8a;
+    background-image: linear-gradient(#245077,#3272a9);
     width: 1341px;
     height: 100px;
     display: flex;
@@ -159,4 +160,14 @@ a{
 }
 .linkcolor{
     color: #84b1da;
+}
+.arrow{
+    color: #dfc03a;
+    margin-right: 8px;
+}
+#p1{
+    height: 6px;
+}
+ul{
+    list-style-type: square;
 }
