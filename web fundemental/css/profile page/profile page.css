@@ -36,6 +36,7 @@
 .profile{
     font-size: 30px;
     color: white;
+    text-decoration: none;
 }
 .home{
     color: white;
@@ -74,6 +75,8 @@ a{
     box-shadow: 2px 2px black;
     margin-right: 125px;
     text-decoration: none;
+    padding: 5px;
+    width: 80px;
 }
 ul li{
     display: flex;
@@ -99,6 +102,7 @@ ul li{
     height: 180px;
     width: 380px;
     padding: 10px;
+    margin-left: 15px;
 
 
 }
@@ -110,6 +114,9 @@ ul li{
     left: 400px;
 
 }
+#name{
+    color: black;
+}
 .location{
     height: 20px;
 }
@@ -118,7 +125,9 @@ ul li{
 }
 h1{
     font-size: 20px;
+    color: white;
 }
+
 #education{
     width: 392px;
     height: 30px;
@@ -132,8 +141,7 @@ h1{
 .education{
     width: 400px;
     height: 150px;
-    outline: 2px solid black;
-    
+    outline: 1px solid #cccccc;
 }
 .txt{
     padding: 10px;
@@ -154,6 +162,7 @@ h1{
     display: flex;
     justify-content: center;
     background-color: #cccccc;
+    color: black;
 }
 .headertop{
     width: 200px;
@@ -186,7 +195,7 @@ h1{
 .connection{
     width: 210px;
     height: 120px;
-    outline: 2px solid black;
+    outline: 1px solid #cccccc;
     vertical-align: top;
     margin-top: 20px;
     margin-left: 20px;
@@ -214,50 +223,50 @@ h1{
 }
 .comp1-2{
     display: flex;
-    justify-content: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 5px;
 
 }
 .comp2-2{
     display: flex;
-    justify-content: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 5px;
 
 
 }
 .comp2-3{
     display: flex;
-    justify-content: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 5px;
 }
 .comp2-4{
     display: flex;
-    justify-content: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 5px;
 }
 
 .connection2{
     width: 210px;
-    height: 220px;
-    outline: 2px solid black;
+    height: 231px;
+    outline: 1px solid #cccccc;
 
 }
 
 #adrien{
     margin-top: 0px;
+    margin-left: 15px;
 }
 #anne{
     margin-top: 0px;
+    margin-left: 15px;
 }
 #alayne{
     margin-top: 0px;
+    margin-left: 15px;
 }
 #arry{
     margin-top: 0px;
+    margin-left: 15px;
 }
 #s3{
     width: 50px;
@@ -267,6 +276,7 @@ h1{
     justify-content: center;
     background-color: #cccccc;
     font-size: 17px;
+    color: black;
 }
 .block1{
     width: 600px;
@@ -282,4 +292,14 @@ h1{
     display: flex;
     justify-content: flex-end;
     
+}
+#view{
+    display: flex;
+    outline: 1px solid #cccccc;
+    width: inherit;
+    height: 30px;
+    align-items: center;
+}
+#viewmore{
+    margin-left: 10px;
 }
