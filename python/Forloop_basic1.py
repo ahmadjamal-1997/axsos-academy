@@ -82,6 +82,7 @@ def ultimate_analysis(arr):
 
 print(ultimate_analysis([2,3,4,5,6,7]))
 
+#9
 def reverse(arr):
     y=len(arr)/2
     for x in range (0,int(y),1):
