@@ -5,34 +5,22 @@ class bankaccount:
         
     def deposit(self,amount):
         self.balance +=amount
-        return self.balance
+        return self
     def withdraw(self,amount):
         self.balance -=amount   
-        return self.balance
+        return self
     def display_account_info(self):
         print(self.balance)
     def yield_interest(self):
         self.balance=self.balance * (self.interest_rate + 1)
-        return self.balance
+        return self
 
 account1=bankaccount(0.02,500)
 account2=bankaccount(0.03,700)
 
 
-account1.deposit(200)
-account1.deposit(100)
-account1.deposit(100)
-account1.withdraw(200)
-account1.yield_interest()
-account1.display_account_info()
+account1.deposit(200).deposit(100).deposit(100).withdraw(200).yield_interest().display_account_info()
+account2.deposit(200).deposit(500).withdraw(100).withdraw(100).withdraw(200).withdraw(100).yield_interest().display_account_info()
 
-account2.deposit(200)
-account2.deposit(500)
-account2.withdraw(100)
-account2.withdraw(100)
-account2.withdraw(200)
-account2.withdraw(100)
-account2.yield_interest()
-account2.display_account_info()
 
 
