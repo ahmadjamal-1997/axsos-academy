@@ -1,0 +1,11 @@
+.boxes{
+    display: flex;
+    width: 200px;
+    justify-content: space-around;
+}
+
+.box{
+    background-color: cadetblue;
+    height: 50px;
+    width: 50px;
+}
