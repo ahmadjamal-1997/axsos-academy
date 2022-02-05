@@ -12,7 +12,10 @@ class user:
         self.account_withdrawal=self.account_withdrawal+amount
     def display_user_balance(self):
         self.account_balance=self.account_deposit-self.account_withdrawal
-        print("the balance is",self.account_balance)
+        if self.account_balance>0 :
+            print("the balance is",self.account_balance)
+        else :
+            print("not enough balance")
     def transfere_money(self,name,amount):
         self.account_balance=self.account_balance-amount
         name.account_balance=name.account_balance+amount
@@ -27,6 +30,8 @@ ahmad.make_deposits(200)
 ahmad.make_deposits(100)
 ahmad.make_withdrawal(100)
 ahmad.make_withdrawal(600)
+
+
 
 ahmad.display_user_balance()
 
