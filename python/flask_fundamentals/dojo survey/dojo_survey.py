@@ -1,6 +1,6 @@
 from flask import Flask, render_template,request
 app = Flask(__name__)
-@app.route('/')
+@app.route('/',methods=['post'])
 def index():
     return render_template("dojo_survey.html")
 
