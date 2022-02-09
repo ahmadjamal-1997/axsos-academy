@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        table{
+            width: 1000px;
+        }
+        .emptyblock{
+            width: 1000px;
+            height: 2px;
+            background-color: black;
+            margin-top: 20px;
+        }
+        .details{
+            display: flex;
+            justify-content: space-between;
+            width: 550px;
+        }
+        .bottom{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        button{
+            margin-left: 260px;
+            margin-top: 36px;
+            width: 60px;
+            height: 60px;
+            background-color: brown;
+            color: white;
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    <h1>All the Users</h1>
+    <table  border='2px'>
+        <tr>
+            <th>id</th>
+            <th>First_name</th>
+            <th>Email</th>
+            <th>Age</th>
+        </tr>
+        {% for data in user  %}
+        <tr class="tr1">
+            <td>{{data.id}}</td>
+            <td>{{data.first_name}} {{data.last_name}}</td>
+            <td>{{data.email_address}}</td>
+            <td>{{data.age}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="emptyblock"></div>
+    <div class="bottom">
+    <h2>Add a User</h2>
+    <form action="/process" method="post">
+        {% csrf_token %}
+        <div class="details">
+        <p>First name <input type="text" name="first_name"> </p>
+        <p> Email <input type="text" name="email"> </p>
+        </div>
+        <div class="details">
+        <p>Last name <input type="text" name="last_name"></p>
+        <p>Age <input type="text" name="age"></p>
+        </div>
+        <button>Add</button>
+    </form>
+    </div>
+</body>
+</html>

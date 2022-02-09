@@ -1,0 +1,20 @@
+>>> users.objects.create(first_name='odai',last_name='qasrawi',email_address='odai@gmail.com',age=23)
+<users: users object (1)>
+>>> users.objects.create(first_name='ahmad',last_name='jamal',email_address='ahmad@gmail.com',age=23)
+<users: users object (2)>
+>>> users.objects.create(first_name='abed',last_name='numan',email_address='abed@gmail.com',age=23)
+<users: users object (3)>
+
+>>> users.objects.all().values()
+
+>>> users.objects.last()
+
+>>> users.objects.first()
+
+>>> c=users.objects.get(id=3)
+>>> c.last_name='pancake'
+>>> c.save()
+
+>>> users.objects.all().order_by("first_name")
+
+>>> users.objects.all().order_by("-first_name")

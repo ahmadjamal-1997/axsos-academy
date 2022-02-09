@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+        }
+        .result{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            outline: 2px solid black;
+            color: white;
+            font-size: 25px;
+            background-color: {{request.session.background_color}}; 
+            width: {{request.session.width}}; 
+            height: {{request.session.height}};
+            
+        }   
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the great number game!</h1>
+    <p>i'm thinking of a number between 1 and 100</p>
+    <p>Take a guess!</p>
+    <div class="result"> {{request.session.result}}</div>
+    <form action="/guess" method="post">
+        {% csrf_token %}
+        <input type="text" name="guess"><br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
