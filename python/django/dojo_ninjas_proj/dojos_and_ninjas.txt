@@ -1,0 +1,42 @@
+>>> dojo.objects.create(name='odai',city='qalqilyeh',state='palestine')
+dojo.objects.create(name='ahmad',city='tulkarm',state='palestine')
+dojo.objects.create(name='abed',city='tulkarm',state='palestine')
+
+>>> c=dojo.objects.all()
+>>> c.delete()
+
+>>> dojo.objects.create(name='abed',city='tulkarm',state='palestine')
+<dojo: dojo object (4)>
+>>> dojo.objects.create(name='odai',city='tulkarm',state='palestine')
+<dojo: dojo object (5)>
+>>> dojo.objects.create(name='ahmad',city='tulkarm',state='palestine')
+
+>>> ninja.objects.create(first_name='maher',last_name='maher',dojo=dojo.objects.get(name='abed'))
+<ninja: ninja object (2)>
+>>> ninja.objects.create(first_name='assad',last_name='assad',dojo=dojo.objects.get(name='abed'))
+<ninja: ninja object (3)>
+>>> ninja.objects.create(first_name='saad',last_name='saad',dojo=dojo.objects.get(name='abed'))
+<ninja: ninja object (4)>
+
+>>> ninja.objects.create(first_name='amin',last_name='amin',dojo=dojo.objects.get(name='odai'))
+<ninja: ninja object (5)>
+>>> ninja.objects.create(first_name='kamal',last_name='kamal',dojo=dojo.objects.get(name='odai'))
+<ninja: ninja object (6)>
+>>> ninja.objects.create(first_name='osaid',last_name='osaid',dojo=dojo.objects.get(name='odai'))
+<ninja: ninja object (7)>
+
+>>> ninja.objects.create(first_name='mubark',last_name='mubark',dojo=dojo.objects.get(name='ahmad'))
+<ninja: ninja object (8)>
+>>> ninja.objects.create(first_name='jihad',last_name='jihad',dojo=dojo.objects.get(name='ahmad'))
+<ninja: ninja object (9)>
+>>> ninja.objects.create(first_name='mahmoud',last_name='mahmoud',dojo=dojo.objects.get(name='ahmad'))
+<ninja: ninja object (10)>
+
+>>> ninja.objects.filter(dojo=dojo.objects.get(name='abed'))
+<QuerySet [<ninja: ninja object (2)>, <ninja: ninja object (3)>, <ninja: ninja object (4)>]>
+
+>>> ninja.objects.filter(dojo=dojo.objects.get(name='ahmad'))
+
+dojo.objects.filter(ninjas=ninja.objects.get(first_name='mahmoud'))
+
+dojo.objects.create(name='ahmad',city='tulkarm',state='palestine',desc='anything')
