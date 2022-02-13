@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,td{
+            border: 1px solid black;
+        }
+        table{
+            width: 350px;
+        }
+        body{
+            display: flex;
+            width: 800px;
+            justify-content: space-between;
+            margin: 0 auto;
+            margin-top: 50px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="leftside">
+    <h1>Add an Author</h1>
+    <form action="/add_author" method="post">
+        {% csrf_token %}
+        <p>First_name <input type="text" name="first_name"></p>
+        <p>Last_name <input type="text" name="last_name"></p>
+        <p>Notes <textarea name="notes"></textarea></p>
+        <button>Add</button>
+    </form>
+    </div>
+    <div class="rightside">
+        <table>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Action</td>
+            </tr>
+            {%for author in allauthors%}
+            <tr>
+                <td>{{author.id}}</td>
+                <td>{{author.first_name}}  {{author.last_name}}</td>
+                <td><a href="http://127.0.0.1:8000/authors/{{author.id}}">views</a></td>
+            </tr>
+            {%endfor%}
+    </div>
+
+</body>
+</html>
