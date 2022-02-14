@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update</title>
+    <style>
+    .top{
+        display: flex;
+        height: 200px;
+        width: 400px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    body{
+        width: 800px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .network-date{
+        display: flex;
+        width: 400px;
+        justify-content: space-between;
+    }
+    textarea{
+        width: 400px;
+        height: 100px;
+    }
+</style>
+</head>
+<body>
+    <div class="top">
+    <h1>Edit Show {{show.id}}</h1>
+    <a href="http://127.0.0.1:8000">Go Back</a>
+    </div>
+    <form action="/update/{{show.id}}" method="post">
+        {% csrf_token %}
+        <p>Title</p>
+        <input type="text" name="new_title" placeholder={{show.title}}>
+        <div class="network-date">
+            <div class="network">
+                <p>Network</p>
+                <input type="text" name="new_network" placeholder={{show.network}}>
+            </div>
+            <div class="date">
+                <p>Release Date</p>
+                <input type="date" name="new_date" placeholder={{show.release_date}}>
+            </div>
+        </div>
+        <p>Description</p>
+        <textarea name="new_desc" placeholder={{show.desc}}></textarea><br>
+        <button>Update</button>
+    </form><br><Br>
+    <a href="http://127.0.0.1:8000/{{show.id}}">Go to Show</a>
+</body>
+</html>

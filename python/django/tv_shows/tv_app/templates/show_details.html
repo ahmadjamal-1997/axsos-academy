@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read (one)</title>
+    <style>
+    .top{
+        display: flex;
+        height: 200px;
+        width: 400px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    body{
+        width: 800px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .links{
+        display: flex;
+        width: 100px;
+        justify-content: space-between;
+
+    }
+    </style>
+</head>
+<body>
+    <div class="top"> 
+    <h1>TV Show {{this_show.id}}</h1>
+    <a href="http://127.0.0.1:8000/">Go Back</a>
+    </div>
+    <p>Title : {{this_show.title}}</p>
+    <p>Network : {{this_show.network}}</p>
+    <p>Release Date : {{this_show.release_date}}</p>
+    <p>Description : {{this_show.desc}}</p><br><br><br>
+    <p>Last updated : {{this_show.updated_at}}</p>
+    <div class="links">
+    <a href="http://127.0.0.1:8000/{{this_show.id}}/edit">Edit</a> | <a href="http://127.0.0.1:8000/delete/{{this_show.id}}">Delete</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read (ALL)</title>
+    <style>
+        table,tr,td{
+            border: 1px solid black;
+        }
+        table{
+            width: 550px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>All Shows</h1>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Title</td>
+            <td>Network</td>
+            <td>Release Date</td>
+            <td>Actions</td>
+        </tr>   
+        {% for show in shows %}
+        <tr>
+            <td>{{show.id}}</td>
+            <td>{{show.title}}</td>
+            <td>{{show.network}}</td>
+            <td>{{show.release_date}}</td>
+            <td><a href="http://127.0.0.1:8000/{{show.id}}">Show</a> | <a href="http://127.0.0.1:8000/{{show.id}}/edit">Edit</a>
+            | <a href="http://127.0.0.1:8000/delete/{{show.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table><br><br>
+        <a  href="http://127.0.0.1:8000/new">Add a New Show</a>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tv show</title>
+    <style>
+        .top{
+            display: flex;
+            height: 200px;
+            width: 400px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        body{
+            width: 800px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+        .network-date{
+            display: flex;
+            width: 400px;
+            justify-content: space-between;
+        }
+        textarea{
+            width: 400px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+    <h1>Add a new show</h1>
+    <a href="http://127.0.0.1:8000">Go Back</a>
+    </div>
+    <form action="/create" method="post">
+        {% csrf_token %}
+        <p>Title</p>
+        <input type="text" name="title">
+        <div class="network-date">
+            <div class="network">
+                <p>Network</p>
+                <input type="text" name="network">
+            </div>
+            <div class="date">
+                <p>Release Date</p>
+                <input type="date" name="date">
+            </div>
+        </div>
+        <p>Description</p>
+        <textarea name="desc"></textarea><br>
+        <button>Create</button>
+    </form>
+</body>
+</html>
