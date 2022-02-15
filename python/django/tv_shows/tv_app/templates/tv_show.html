@@ -37,6 +37,13 @@
     </div>
     <form action="/create" method="post">
         {% csrf_token %}
+        {% if messages %}
+            <ul class="messages">    
+                {% for message in messages %}    
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                {% endfor %}
+            </ul>
+        {% endif %}
         <p>Title</p>
         <input type="text" name="title">
         <div class="network-date">
