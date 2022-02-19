@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            width: 800px;
+            margin: 0 auto;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .leftside{
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .form1{
+            width: 280px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        button{
+            margin-top: 20px;
+            background-color: aqua;
+            box-shadow: 2px 2px 2px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="leftside">
+    <h2>Registration</h2>
+    <form action="/register" method="post">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% csrf_token %}
+        <div class="form">
+        <div class="form1"><p>First Name</p><input type="text" name="first_name"></div>
+        <div class="form1"><p>Last Name </p><input type="text" name="last_name"></div>
+        <div class="form1"><p>Email </p><input type="text" name="email"></div>
+        <div class="form1"><p>Password </p><input type="password" name="password"></div>
+        <div class="form1"><p>Confirm PW </p><input type="password" name="confirm_pw"></div>
+        <button>Register</button>
+        </div>
+    </form>
+    </div>
+    <div class="rightside">
+        <h2>Login</h2>
+        <form action="/login" method="post">
+            {% csrf_token %}
+            <div class="form1"><p>Email</p><input type="text" name="login_email"></div>
+            <div class="form1"><p>Password</p><input type="password" name="login_password"></div>
+            <button>Log In</button>
+        </form>
+    </div>
+</body>
+</html>

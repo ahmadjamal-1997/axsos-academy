@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        nav{
+            display: flex;
+            outline: 2px solid black;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+            border-top: none;
+        }
+        .rightside{
+            width: 250px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 15px;
+        }
+        h1{
+            margin-left: 10px;
+        }
+        .massage{
+            justify-content: flex-end;
+            margin-top: 50px;
+            margin-left: 30px;
+        }
+        textarea{
+            width: 1200px;
+            height: 80px;
+        }
+        .post_button{
+            display: flex;
+            justify-content: flex-end;
+            width: 1200px;
+        }
+        #post_id{
+            background-color: #2b78e4;
+            color: white;
+            box-shadow: 2px 2px 2px black;
+        }
+        button{
+            background-color: #009e0f;
+            box-shadow: 2px 2px 2px black;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>CodingDojo Wall</h1>
+        <div class="rightside">
+        <p>Welcome {{the_user.first_name}}</p>
+        <a href="http://127.0.0.1:8000/">Log Off</a>
+        </div>
+    </nav>
+    <form action="/massage/{{the_user.id}}" method="post" class="massage">
+        {% csrf_token %}
+        <h2>Post a massage</h2>
+        <textarea name="massage"></textarea><br>
+        <div class="post_button">
+        <button id="post_id">post a massage</button>
+        </div>
+    </form>
+    <ul>
+    {% for user in users %}
+        {% for msg in massages %}
+            {% if user.id  ==  msg.users_id %}
+                <li>{{user.first_name}}  {{user.last_name}}- {{msg.created_at}}
+                    <ul>
+                        <li>{{msg.massage}}
+                            <ul>
+                                {% for comment in comments %}
+                                    {% if msg.id == comment.massage_id %}
+                                        <p>{{comment.users_id}} {{comment.created_at}} </p>
+                                            <ul>
+                                                <li>{{comment.comment}}</li>
+                                            </ul>
+                                    {% endif %}
+                                {% endfor %}
+                                <p>Post a comment</p>
+                                <form action="/comment/{{msg.id}}/{{the_user.id}}" method="post">  
+                                    {% csrf_token %}
+                                    <textarea name="comment"></textarea>
+                                    <div class="post_button">
+                                        <button>Post a comment</button>
+                                    </div>
+                                </form>
+                            </ul>
+                        </li>
+                    </ul>   
+                </li>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+    </ul>
+</body>
+</html>
