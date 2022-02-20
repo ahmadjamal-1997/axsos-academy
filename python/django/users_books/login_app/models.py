@@ -15,9 +15,6 @@ class USERManager(models.Manager):
             errors["password"] = "password should be at least 10 characters"
         if postData['password']!=postData['confirm_pw']:
             errors['login_password']="password does not match"
-        this_user=USER.objects.filter(email=postData['email'])
-        if this_user:
-            errors['exsistance']="this email already exisit"
         return errors
     def login_validator(self,postData):
         errors={}
