@@ -8,6 +8,7 @@ def show(request):
 
 def register(request):
     errors = USER.objects.basic_validator(request.POST)
+    request.session['coming_from'] = 'register'
     if len(errors) > 0:
         for key, value in errors.items():
             messages.error(request, value)
@@ -27,6 +28,7 @@ def register(request):
 
 def login(request):
     errors = USER.objects.login_validator(request.POST)
+    request.session['coming_from'] = 'login'
     if len(errors) > 0:
         for key, value in errors.items():
             messages.error(request, value)
