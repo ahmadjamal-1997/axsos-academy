@@ -72,7 +72,8 @@
         </form>
     </div>
     <div class="allbooks">
-        <h2 style="background-color: brown; color: white; width: 400px; display: flex; justify-content: center; font-family: cursive;">All Books</h2>
+        <h2 style="background-color: brown; color: white; width: 400px; display: flex; justify-content: center; font-family: cursive;
+        border-radius: 3px; box-shadow: 5px 5px 5px black;">All Books</h2>
         <div class="the_book">
         {% for book in books %}
         {% if the_user in book.manyusers.all  %}

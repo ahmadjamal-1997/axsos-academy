@@ -6,7 +6,7 @@ def books(request):
     context={
         'the_user' : USER.objects.get(id=request.session['user_id']),
         'users' : USER.objects.all(),
-        'books' : Book.objects.all()
+        'books' : Book.objects.all().order_by("-created_at")
     }
     return render(request,'all_books.html',context)
 

@@ -30,7 +30,7 @@ def login(request):
     if len(errors) > 0:
         for key, value in errors.items():
             messages.error(request, value)
-    elif not USER.objects.filter(email=request.POST['login_email']):
+    if not USER.objects.filter(email=request.POST['login_email']):
         messages.error(request, "not signed in! register now")
         return redirect('/')
     else:
