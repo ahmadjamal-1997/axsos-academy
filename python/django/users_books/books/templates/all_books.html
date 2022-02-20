@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Books</title>
+    <style>
+        .mainbody{
+            display: flex;
+            justify-content: space-around;
+        }
+        .top{
+            display: flex;
+            align-items: center;
+            width: 1000px;
+            justify-content: space-between ;
+            border-bottom: 2px solid black;
+            margin-bottom: 10px;
+        }
+        body{
+            margin: 0 auto;
+            width: 1000px;
+        }
+        .par{
+            display: flex;
+            width: 250px;
+            justify-content: space-between;
+        }
+        .allbooks{
+            border: 1px solid gray;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 450px;
+        }
+        .book{
+            font-size: 18px;
+            list-style: none;
+            outline: 1px solid rgb(145, 37, 10);
+            width: 300px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 5px 5px 5px rgb(145, 37, 10) ;
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+    <h1>Welcome, {{the_user.first_name}} </h1>
+    <a href="http://127.0.0.1:8000">Log out</a>
+    </div>
+    <div class="mainbody">
+    <div class="add">
+        <form action="/add" method="post">
+            {% csrf_token %}
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <h2>Add a Favorite Book</h2>
+            <p class="par">Title <input type="text" name="title"></p>
+            <p class="par">Description <textarea name="desc"></textarea></p>
+            <button style="background-color: brown; color: white;">Add</button>
+        </form>
+    </div>
+    <div class="allbooks">
+        <h2 style="background-color: brown; color: white; width: 400px; display: flex; justify-content: center; font-family: cursive;">All Books</h2>
+        <div class="the_book">
+        {% for book in books %}
+        {% if the_user in book.manyusers.all  %}
+        <li class="book"><a href="http://127.0.0.1:8000/details/{{book.id}}" style="margin-top: 30px;">{{book.title}}</a>
+        <p>(added by {{book.users.first_name}})</p>
+        <p>this is one of your favorites</p></li><br><br>
+        {% else %}
+        <li class="book"><a href="http://127.0.0.1:8000/details/{{book.id}}">{{book.title}}</a>
+        <p>(added by {{book.users.first_name}})</p>
+        <a href="http://127.0.0.1:8000/favor/{{book.id}}" style="color: green;">Add to Favorites</a></li><br><br>
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>
