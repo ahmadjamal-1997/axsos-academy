@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Books</title>
+    <style>
+        .buttons{
+            display: flex;
+        }
+        button{
+            box-shadow: 2px 2px 2px black;
+            margin-left: 10px;
+        }
+        .mainbody{
+            display: flex;
+            width: 800px;
+            justify-content: space-between;
+        }
+        .top{
+            border-bottom: 2px solid black;
+            display: flex;
+            align-items: center;
+            width: 1350px;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <h1>Welcome, {{the_user.first_name}} </h1>
+        <a href="http://127.0.0.1:8000" style="font-size: 20px;">Log out</a>
+    </div>
+    <div class="mainbody">
+        <div>
+            <h2>{{this_book.title}}</h2>
+            <p>added by {{this_book.users.first_name}}</p>
+            <p>added on {{this_book.created_at}}</p>
+            <p>last updated on {{this_book.updated_at}}</p>
+            <p>Description </p>
+                
+        </div>
+        <div>
+            <h3>users who like this book </h3>
+            <ul style="list-style: none;">
+                {% for user in this_book.manyusers.all %}
+                <li>{{user.first_name}}  {{user.last_name}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

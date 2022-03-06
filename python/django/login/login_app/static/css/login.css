@@ -1,0 +1,10 @@
+body{
+    display: flex;
+    width: 800px;
+    margin: 0 auto;
+    outline: 2px solid black;
+}
+
+.leftside{
+    outline: 2px solid black;
+}
