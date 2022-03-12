@@ -15,15 +15,16 @@ public class Items {
     public void setPrice(double price){
         this.price = price;
     }
-    public double getIndex(){
+    public int getIndex(){
         return this.index;
     }
     public void setIndex(int index){
         this.index = index;
     }
 
-    public Items(String name , double price){
+    public Items(String name , double price , int index){
         this.name = name ; 
         this.price = price ;
+        this.index = index;
     }
 }

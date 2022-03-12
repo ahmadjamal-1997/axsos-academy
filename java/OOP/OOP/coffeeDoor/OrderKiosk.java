@@ -1,13 +1,18 @@
+import java.util.ArrayList;
+
 public class OrderKiosk {
-    ArrayList<Items> menu;
-    ArrayList<Order> orders;
+
+    private ArrayList<Items> menu;
+    private ArrayList<Order> orders;
 
     public OrderKiosk(){
-        ArrayList<Items> menu = new ArrayList();
-        ArrayList<Order> orders = new ArrayList();
+        menu = new ArrayList();
+        orders = new ArrayList();
     }
-    public void addItem(String name , double price){
-        
+
+    public void addItem(String name , double price , int index){
+        Items item1 = new Items(name,price,index);
+        menu.add(item1);
     }
 
 }

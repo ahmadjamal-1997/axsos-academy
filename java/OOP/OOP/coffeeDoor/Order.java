@@ -45,7 +45,7 @@ public class Order {
             System.out.println(this.items.get(i).getName() + "-" + this.items.get(i).getPrice());
         }
         double total = this.getTotal();
-        System.out.println(sum);
+        System.out.println(total);
     }
     public double getTotal(){
         double total = 0;
