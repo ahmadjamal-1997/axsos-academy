@@ -20,3 +20,4 @@ const osama = new Ninja("osama",50);
 osama.drinkSake();
 osama.showStats();
 osama.sayName();
+
