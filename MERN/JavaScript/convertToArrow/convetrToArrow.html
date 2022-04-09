@@ -43,7 +43,7 @@
         document.getElementById("paragraph").onclick = () =>{
             setBackgroundColorById("paragraph","red")
         }
-        function setBackgroundColorById(id, color){
+        var setBackgroundColorById = (id, color)=>{
             document.getElementById(id).style = "background-color: " + color;
         }
         function mouseOverFunction(el){
